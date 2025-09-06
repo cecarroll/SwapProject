@@ -16,6 +16,11 @@ Here, I am taking in 2 pointers to addresses of the values of array:
 
 
 function swap (array[i], array[j]):
+I was researching a lot if there was a way to do this without a temp variable, but alas
+int temp
+temp equals a 
+a equals b
+b equals temp *remember we will have to assign pointers that go back to the address to get the desired changes
 
 
 
@@ -25,30 +30,45 @@ function printValues(array):
 
 
 
+
+
+
+
+function sort(array)
+while keepGoing = True{
+    keepGoing = False
+    for i in max-1
+        if array[i] > array[i+1]
+            swap[array[i], array[i+1]]
+            keepGoing = True
+}
+
+
 */
 
 
 #include <stdio.h>
 const int MAX=9;
+int keepGoing = 1;
 
 void printValues(int*);
-//void sort(int*);
+void sort(int*);
 void swap(int*, int*);
 
 int main(){
   int values[] = {7, 3, 9, 4, 6, 1, 2, 8, 5};
   printf("Before: \n");
   printValues(values);
-
+/*
   // test swap
   int x = 3;
   int y = 5;
   printf("x: %d, y: %d \n", x, y);
   swap(&x, &y);
   printf("x: %d, y: %d \n", x, y);
-
-  //sort(values);
-  //printf("After: \n");
+*/
+  sort(values);
+  printf("After: \n");
   printValues(values);
   printf("\n");
   return(0);
@@ -72,4 +92,21 @@ void swap(int *a, int *b){
   *a = temp;
 
 
+}
+
+void sort(int *a){
+  
+  while(keepGoing){
+    keepGoing = 0;
+      for (int i = 0; i< MAX - 1;i++){
+        if( *(a+i)>*(a+i+1)){
+          swap((a+i),(a+i+1));
+          keepGoing = 1;
+      	  printf("After: \n");
+          printValues(a);
+          printf("\n");
+    
+      }
+    }
+  }
 }
