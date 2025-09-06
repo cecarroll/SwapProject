@@ -31,7 +31,7 @@ void printValues(int *a){
     for (int i = 0; i < MAX ; i++) {
         printf("%d ", a[i]);
     }
-    printf("]");
+    printf("]  \n");
 } 
 
 void swap(int *a, int *b){
